@@ -1,0 +1,105 @@
+/* WorkshopList.css */
+
+.workshop-list {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, #fff0f6, #fce4ec);
+  padding: 2rem;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.workshop-list h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #a21caf;
+  margin-bottom: 2.5rem;
+}
+
+.workshops-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.workshop-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(225, 29, 116, 0.1);
+  padding: 2rem;
+  transition: all 0.3s ease;
+  border: 2px solid #f9c5d1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.workshop-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(225, 29, 116, 0.15);
+  border-color: #e11d74;
+}
+
+/* 🔥 Clean, square, full visible image */
+.workshop-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;             /* Perfect square */
+  object-fit: contain;             /* Show full image inside */
+  border-radius: 15px;
+  background-color: #fff0f6;       /* Light pink background */
+  padding: 10px;                   /* Padding for image spacing */
+  margin-bottom: 1.2rem;
+  box-shadow: 0 6px 15px rgba(225, 29, 116, 0.1);
+}
+
+
+/* Heading inside card */
+.workshop-card h3 {
+  color: #a21caf;
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+/* Text inside card */
+.workshop-card p {
+  font-size: 0.95rem;
+  color: #444;
+  margin: 0.3rem 0;
+}
+
+/* Register button */
+.register-button {
+  background: linear-gradient(135deg, #e11d74, #c026d3);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.6rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.register-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(225, 29, 116, 0.4);
+}
+
+/* 📱 Responsive design */
+@media (max-width: 768px) {
+  .workshop-list h2 {
+    font-size: 2rem;
+  }
+
+  .workshop-card {
+    padding: 1.5rem;
+  }
+
+  .workshop-image {
+    aspect-ratio: 1 / 1;
+    height: auto;
+  }
+}

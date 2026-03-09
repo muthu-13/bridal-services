@@ -1,0 +1,93 @@
+.recently-viewed-wrapper {
+  margin: 40px 0;
+  padding: 0 20px;
+  background-color: white;
+}
+
+/* Center description text under images for Recently Viewed cards */
+.recently-viewed-wrapper .service-desc {
+  text-align: center;
+}
+
+.recently-viewed-heading {
+  font-family: "Cinzel", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: left;
+  
+  /* Standard + vendor-prefixed background clip for text gradient */
+  background: linear-gradient(135deg, #ee47b1, #c026d3, #db2777);
+  background-clip: text;          /* standard property */
+  -webkit-background-clip: text;  /* for Safari/Chrome */
+  -webkit-text-fill-color: transparent; /* required for gradient text */
+  
+  margin-bottom: 12px;
+  
+  animation: fadeSlideIn 0.8s ease-out;
+  position: relative;
+}
+
+.recently-viewed-heading::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #ee47b1, #c026d3);
+  margin: 6px auto 0 auto;
+  border-radius: 2px;
+}
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+.recently-viewed-list {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px; /* match horizontal gap in Services.css */
+  padding: 10px 2px; /* consistent padding around the row */
+  scroll-snap-type: x mandatory;
+}
+
+.recently-viewed-list::-webkit-scrollbar {
+  height: 8px;
+}
+
+.recently-viewed-list::-webkit-scrollbar-thumb {
+  background: #e5e5e5;
+  border-radius: 8px;
+}
+
+/* Minimal wrapper for each card; the card itself uses Services.css styles */
+.recently-viewed-item {
+  /* Match the grid column count widths from Services.css using gap: 20px */
+  flex: 0 0 calc((100% - (3 * 20px)) / 4); /* 4 columns */
+  scroll-snap-align: start;
+}
+
+@media (max-width: 1024px) {
+  .recently-viewed-item {
+    flex: 0 0 calc((100% - (2 * 20px)) / 3); /* 3 columns */
+  }
+}
+
+@media (max-width: 768px) {
+  .recently-viewed-item {
+    flex: 0 0 calc((100% - (1 * 20px)) / 2); /* 2 columns */
+  }
+}
+
+@media (max-width: 480px) {
+  .recently-viewed-item {
+    flex: 0 0 100%; /* 1 column */
+  }
+}

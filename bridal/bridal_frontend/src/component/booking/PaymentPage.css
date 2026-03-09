@@ -1,0 +1,76 @@
+/* PaymentPage.css */
+
+.payment-box {
+  max-width: 600px;      /* Increased width */
+  margin: 60px auto;     /* More margin for breathing room */
+  padding: 40px 35px;    /* More padding */
+  background-color: #fff;
+  border-radius: 15px;   /* Slightly bigger rounded corners */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* Stronger shadow */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.payment-box h2 {
+  font-weight: 700;
+  font-size: 2.4rem;      /* Bigger heading */
+  margin-bottom: 30px;
+  color: #222;
+  text-align: center;
+}
+
+.payment-box p {
+  font-size: 1.3rem;      /* Bigger text */
+  margin: 12px 0;
+}
+
+.payment-box p strong {
+  font-weight: 700;
+}
+
+.button-group {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+}
+
+.pay-btn, .back-btn {
+  flex: 1;
+  padding: 15px 0;
+  font-weight: 700;
+  font-size: 1.25rem;     /* Bigger button text */
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
+.pay-btn {
+  background-color: #4CAF50;
+}
+
+.pay-btn:hover:not(:disabled) {
+  background-color: #388E3C;
+}
+
+.back-btn {
+  background-color: #7CB342;
+}
+
+.back-btn:hover {
+  background-color: #558B2F;
+}
+
+.pay-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #d32f2f;
+  margin-top: 25px;
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.2rem;
+}

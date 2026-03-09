@@ -1,0 +1,170 @@
+/* ====== Dashboard Layout ====== */
+.dashboard-wrapper {
+  display: flex;
+  height: 100vh;
+  background: #fff0f5; /* soft pink */
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Sidebar */
+.dashboard-sidebar {
+  width: 240px;
+  background: #ffe6f0;
+  padding: 25px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dashboard-sidebar h2 {
+  color: #cc0066;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.dashboard-sidebar button {
+  background: transparent;
+  border: none;
+  padding: 10px;
+  text-align: left;
+  font-weight: bold;
+  color: #cc0066;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.dashboard-sidebar button:hover {
+  background: #cc0066;
+  color: white;
+}
+
+/* Logout button special */
+.logout-btn {
+  margin-top: auto;
+  background-color: #e74c3c !important;
+  color: white !important;
+}
+
+/* Main content */
+.dashboard-main {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+  background: #fff0f5;
+}
+
+/* Section */
+.dashboard-section {
+  margin-bottom: 20px;
+}
+
+/* Cards grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+/* Card styling */
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card.cancelled {
+  opacity: 0.6;
+}
+
+/* Wishlist/workshop cards */
+.wishlist-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.error-msg {
+  color: #e74c3c;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Buttons inside cards */
+.card button {
+  margin-top: 10px;
+  padding: 6px 10px;
+  background: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.card button:hover {
+  background: #ff1493;
+}
+.cancelled {
+  opacity: 0.7;
+  background-color: #f8f8f8;
+  border-left: 4px solid #ff4444;
+}
+
+.refund-info {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.refund-eligible {
+  color: #17a2b8;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+.no-refund {
+  color: #6c757d;
+  font-style: italic;
+}
+
+.cancel-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background-color: #c82333;
+}
+
+.payment-info {
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.cancellation-info {
+  background-color: #fff3cd;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 10px;
+}

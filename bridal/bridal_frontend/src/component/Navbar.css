@@ -1,0 +1,483 @@
+/* Navbar CSS - Matching Home.css Style */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: #d81b60;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(216, 27, 96, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 80px;
+  backdrop-filter: blur(10px);
+}
+
+/* Enhanced background with gradient overlay */
+.navbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(225, 29, 116, 0.1), rgba(219, 39, 119, 0.05));
+  pointer-events: none;
+}
+
+/* Scrolled state enhancement */
+.navbar.scrolled {
+  background-color: rgba(216, 27, 96, 0.98);
+  box-shadow: 0 8px 32px rgba(216, 27, 96, 0.4);
+  backdrop-filter: blur(20px);
+}
+
+/* Logo Styling - Matching Home.css */
+.navbar .logo {
+  position: relative;
+  z-index: 2;
+}
+
+.navbar .logo a {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-decoration: none;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(135deg, #ffffff, #ffe6f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.navbar .logo a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ffffff, #ffe6f0);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.navbar .logo a:hover::after {
+  width: 100%;
+}
+
+.navbar .logo a:hover {
+  transform: translateY(-2px) scale(1.05);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Navigation Links - Matching Home.css style */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li a {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 12px 20px;
+  border-radius: 25px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+/* Holographic hover effect */
+.nav-links li a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.2), 
+    rgba(255, 230, 240, 0.3),
+    rgba(255, 255, 255, 0.1));
+  opacity: 0;
+  border-radius: 25px;
+  transition: all 0.4s ease;
+  transform: scale(0.8) rotate(5deg);
+}
+
+.nav-links li a:hover::before {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.nav-links li a:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Special styling for CTA buttons (Sign Up & Booking) */
+.nav-links li:nth-child(2) a,
+.nav-links li:nth-child(5) a,
+.nav-links .cta-button {
+  background: linear-gradient(135deg, #ffffff, #ffe6f0);
+  color: #d81b60;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 30px;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+  text-shadow: none;
+  border: 2px solid transparent;
+}
+
+.nav-links li:nth-child(2) a::before,
+.nav-links li:nth-child(5) a::before,
+.nav-links .cta-button::before {
+  background: linear-gradient(135deg, #ffe6f0, #ffffff);
+}
+
+.nav-links li:nth-child(2) a:hover,
+.nav-links li:nth-child(5) a:hover,
+.nav-links .cta-button:hover {
+  background: linear-gradient(135deg, #ffe6f0, #ffffff);
+  color: #c2185b;
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 15px 40px rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Active link styling */
+.nav-links a.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-weight: 600;
+  position: relative;
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1001;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.mobile-menu-btn span {
+  width: 25px;
+  height: 3px;
+  background: #ffffff;
+  margin: 3px 0;
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-menu-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+  background: #ffffff;
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+  background: #ffffff;
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 15px 40px;
+  }
+  
+  .nav-links {
+    gap: 20px;
+  }
+  
+  .nav-links li a {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+  }
+  
+  .navbar .logo a {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 70px;
+    padding: 12px 25px;
+  }
+  
+  .navbar .logo a {
+    font-size: 1.5rem;
+  }
+  
+  .mobile-menu-btn {
+    display: flex;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, rgba(216, 27, 96, 0.98), rgba(194, 24, 91, 0.98));
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+    box-shadow: 0 8px 32px rgba(216, 27, 96, 0.4);
+    transform: translateY(-100vh);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .nav-links li {
+    width: 100%;
+  }
+  
+  .nav-links li a {
+    display: block;
+    text-align: center;
+    padding: 16px 25px;
+    width: 100%;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 8px;
+  }
+  
+  .nav-links li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px) scale(1.02);
+  }
+  
+  .nav-links li:nth-child(2) a,
+  .nav-links li:nth-child(5) a,
+  .nav-links .cta-button {
+    background: linear-gradient(135deg, #ffffff, #ffe6f0);
+    color: #d81b60;
+    margin: 1rem 0;
+    font-weight: 700;
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+  }
+  
+  .nav-links li:nth-child(2) a:hover,
+  .nav-links li:nth-child(5) a:hover,
+  .nav-links .cta-button:hover {
+    background: linear-gradient(135deg, #ffe6f0, #ffffff);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 35px rgba(255, 255, 255, 0.4);
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    height: 65px;
+    padding: 10px 20px;
+  }
+  
+  .navbar .logo a {
+    font-size: 1.4rem;
+  }
+  
+  .nav-links {
+    top: 65px;
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+  }
+  
+  .nav-links li a {
+    padding: 14px 20px;
+    font-size: 1rem;
+    border-radius: 15px;
+  }
+  
+  .nav-links li:nth-child(2) a,
+  .nav-links li:nth-child(5) a,
+  .nav-links .cta-button {
+    padding: 16px 25px;
+  }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Navbar entrance animation */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.navbar {
+  animation: slideDown 0.6s ease-out;
+}
+
+/* Enhanced focus states for accessibility */
+.nav-links a:focus {
+  outline: 3px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.2);
+}
+
+.mobile-menu-btn:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+}
+
+/* Glowing effect animation */
+@keyframes navGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+  }
+}
+
+.nav-links a:focus:not(:hover) {
+  animation: navGlow 1.5s infinite;
+}
+
+/* Bottom border animation for regular links */
+.nav-links li:not(:nth-child(2)):not(:nth-child(5)) a::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ffffff, #ffe6f0);
+  border-radius: 1px;
+  transition: width 0.4s ease;
+}
+
+.nav-links li:not(:nth-child(2)):not(:nth-child(5)) a:hover::after {
+  width: 70%;
+}
+
+/* Magnetic effect for buttons */
+.nav-links li:nth-child(2) a,
+.nav-links li:nth-child(5) a,
+.nav-links .cta-button {
+  position: relative;
+}
+
+.nav-links li:nth-child(2) a:before,
+.nav-links li:nth-child(5) a:before,
+.nav-links .cta-button:before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ffffff, #ffe6f0, #ffffff);
+  border-radius: 32px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.nav-links li:nth-child(2) a:hover:before,
+.nav-links li:nth-child(5) a:hover:before,
+.nav-links .cta-button:hover:before {
+  opacity: 1;
+}
+
+/* Performance optimizations */
+.navbar,
+.nav-links,
+.nav-links li a {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* High contrast support */
+@media (prefers-contrast: high) {
+  .navbar {
+    background-color: #d81b60;
+    border-bottom: 2px solid #ffffff;
+  }
+  
+  .nav-links li a {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .nav-links li:nth-child(2) a,
+  .nav-links li:nth-child(5) a,
+  .nav-links .cta-button {
+    border: 2px solid #d81b60;
+  }
+}

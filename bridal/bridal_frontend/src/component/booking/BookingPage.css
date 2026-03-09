@@ -1,0 +1,242 @@
+/* ==============================
+   Booking Page Styling
+   ============================== */
+.booking-container {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(to right, #fff0f6, #fce4ec);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+/* ---------- Hero Section ---------- */
+.booking-hero {
+  width: 100%;
+  height: 45vh;
+  background: url("https://images.unsplash.com/photo-1529634895721-6d5d3f6d1c5c")
+    center/cover no-repeat;
+  position: relative;
+}
+
+.hero-overlay {
+  background: rgba(162, 64, 77, 0.45);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+.booking-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.booking-subtitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* ---------- Form Wrapper ---------- */
+.form-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  margin-top: -3rem;
+  padding: 2rem;
+}
+
+.form-container {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border: 2px solid #f9c5d1;
+}
+
+/* ---------- Header ---------- */
+.form-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #e11d74;
+}
+
+.form-description {
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+/* ---------- Booking Form ---------- */
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #e11d74;
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- Inputs ---------- */
+.form-group input,
+.form-group select {
+  padding: 0.9rem 1.2rem;
+  border: 2px solid #f9c5d1;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #e11d74;
+  box-shadow: 0 0 10px rgba(225, 29, 116, 0.2);
+}
+
+/* ---------- Custom Event Input ---------- */
+.custom-event {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.custom-event input {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  border: 2px solid #f9c5d1;
+}
+
+.custom-event button {
+  background: #e11d74;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.custom-event button:hover {
+  background: #c026d3;
+}
+
+/* ---------- Card Grid Styling (Event Types, Services, Packages) ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-top: 0.8rem;
+}
+
+.select-card {
+  background: white;
+  border: 2px solid #f9c5d1;
+  border-radius: 14px;
+  padding: 1.2rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  user-select: none;
+  position: relative;
+}
+
+.select-card:hover {
+  transform: translateY(-4px);
+  border-color: #e11d74;
+  box-shadow: 0 10px 20px rgba(225, 29, 116, 0.2);
+}
+
+.select-card.selected {
+  border-color: #e11d74;
+  background: linear-gradient(to right, #fff0f6, #fce4ec);
+  color: #e11d74;
+  box-shadow: 0 10px 20px rgba(225, 29, 116, 0.25);
+}
+
+.select-card.selected::after {
+  content: "✓";
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #e11d74;
+  color: white;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* ---------- Errors ---------- */
+.error {
+  font-size: 0.85rem;
+  color: #dc2626;
+  margin-top: 0.3rem;
+}
+
+/* ---------- Submit Button ---------- */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #e11d74, #c026d3);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(225, 29, 116, 0.4);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .form-wrapper {
+    padding: 1rem;
+  }
+  .form-container {
+    padding: 1.5rem;
+  }
+  .card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+}
